@@ -41,7 +41,7 @@ EJECUCIÓN:
 */
 
 document.addEventListener("DOMContentLoaded", function(e){
-    getJSONData(PRODUCTS_URL).then(function(resultObj){
+    getJSONData(PRODUCTS_URL_101).then(function(resultObj){
         if (resultObj.status === "ok")
         {
             categoriesArray = resultObj.data;
