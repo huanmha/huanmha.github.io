@@ -4,7 +4,7 @@ function deslogearse(){
 
     if (sessionStorage.getItem("email") !=""){
 
-        sessionStorage.setItem("email", ""); //solo está guardado el email en sessiostorage
+        sessionStorage.clear; //solo está guardado el email en sessiostorage
         alert("Sesión Cerrada");
         location.href = "login.html";
         
