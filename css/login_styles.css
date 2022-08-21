@@ -76,22 +76,9 @@ html
   
   /* FORM TYPOGRAPHY*/
   
-  input[type=button] {
-    background-color: #56baed;
-    border: none;
-    color: white;
-    padding: 0px 0px 0px 0px;
-    margin-top: 25px;
-    margin-right: 10px;
-    margin-left: 0px;
-    text-decoration: none;
-    display: inline-block;
-    text-transform: lowercase;
-    font-size: 10px;
 
-  }
   
-  input[type=submit], input[type=reset]  {
+  input[type=checkbox],input[type=button],input[type=submit], input[type=reset]  {
     background-color: #56baed;
     border: none;
     color: white;
@@ -113,7 +100,7 @@ html
     transition: all 0.3s ease-in-out;
   }
   
-  input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
+  input[type=checkbox]:hover,input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
     background-color: #39ace7;
   }
   

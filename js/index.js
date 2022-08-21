@@ -1,3 +1,18 @@
+
+function deslogearse(){
+
+
+    if (sessionStorage.getItem("email") !=""){
+
+        sessionStorage.setItem("email", ""); //solo está guardado el email en sessiostorage
+        alert("Sesión Cerrada");
+        location.href = "login.html";
+        
+    }
+    
+}
+
+
 document.addEventListener("DOMContentLoaded", function(){
     document.getElementById("autos").addEventListener("click", function() {
         localStorage.setItem("catID", 101);
@@ -12,6 +27,9 @@ document.addEventListener("DOMContentLoaded", function(){
         window.location = "products.html"
     });
 
+    document.getElementById("cerrar").addEventListener("click", function() {
+        deslogearse();
+    });
 
     let email = sessionStorage.getItem("email");
 
