@@ -13,6 +13,29 @@ function deslogearse(){
 }
 
 
+function revisarEmail(){
+    let email = sessionStorage.getItem("email");
+
+    if (email == null){
+
+        alert("Debes logearte para ingresar a e-commerce");
+        location.href = "login.html";
+
+    }
+    else {
+        alert("Estás logeado con "+email);
+    }
+
+} 
+
+function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+
+
 document.addEventListener("DOMContentLoaded", function(){
     document.getElementById("autos").addEventListener("click", function() {
         localStorage.setItem("catID", 101);
@@ -30,17 +53,12 @@ document.addEventListener("DOMContentLoaded", function(){
     document.getElementById("cerrar").addEventListener("click", function() {
         deslogearse();
     });
+    
+    document.getElementById("cerrarGoogle").addEventListener("click", function() {
 
-    let email = sessionStorage.getItem("email");
+        signOut();
+    });
 
-    if (email == null){
-
-        alert("Debes logearte para ingresar a e-commerce");
-        location.href = "login.html";
-
-    }
-    else {
-        alert("Estás logeado con "+email);
-    }
+    revisarEmail();
 
 });
