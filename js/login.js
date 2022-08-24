@@ -52,7 +52,6 @@ function onSignIn(googleUser) {
     //console.log("ID Token: " + id_token);
 
     document.getElementById("email").innerHTML = profile.getEmail();
-    document.getElementById("password").innerHTML = profile.getId();
 
   }
 
