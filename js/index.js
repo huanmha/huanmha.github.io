@@ -28,12 +28,12 @@ function revisarEmail(){
 
 } 
 
-function signOut() {
+/* function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
       console.log('User signed out.');
     });
-  }
+  } */
 
 
 document.addEventListener("DOMContentLoaded", function(){
@@ -54,11 +54,13 @@ document.addEventListener("DOMContentLoaded", function(){
         deslogearse();
     });
     
-    document.getElementById("cerrarGoogle").addEventListener("click", function() {
+    revisarEmail();
+
+    document.getElementById("mostrar_email").innerHTML = sessionStorage.getItem("email");
+
+/*     document.getElementById("cerrarGoogle").addEventListener("click", function() {
 
         signOut();
-    });
-
-    revisarEmail();
+    }); */
 
 });
