@@ -7,7 +7,7 @@ let currentSortCriteria = undefined;
 let minCount = undefined;
 let maxCount = undefined;
 
-function sortCategories(criteria, array){
+function sortProducts(criteria, array){
     let result = [];
     if (criteria === ORDER_ASC_BY_COST)
     {
@@ -85,14 +85,14 @@ function showProductsList(array){
     }
 }
 
-function sortAndShowCategories(sortCriteria, categoriesArray){
+function sortAndShowProducts(sortCriteria, productsArray){
     currentSortCriteria = sortCriteria;
 
-    if(categoriesArray != undefined){
-        currentProductsArray = categoriesArray;
+    if(productsArray != undefined){
+        currentProductsArray = productsArray;
     }
 
-    currentProductsArray = sortCategories(currentSortCriteria, currentProductsArray );
+    currentProductsArray = sortProducts(currentSortCriteria, currentProductsArray );
 
     //Muestro las categorías ordenadas
     showProductsList(currentProductsArray );
@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         {
             currentProductsArray  = resultObj.data.products
             showProductsList(currentProductsArray )
-            sortAndShowCategories(ORDER_ASC_BY_COST, currentProductsArray);//default
+            //sortAndShowCategories(ORDER_ASC_BY_COST, currentProductsArray);//default
         }
     });
 
@@ -160,15 +160,15 @@ document.addEventListener("DOMContentLoaded", function(e){
     })
 
     document.getElementById("sortAsc").addEventListener("click", function(){
-        sortAndShowCategories(ORDER_ASC_BY_COST,currentProductsArray );
+        sortAndShowProducts(ORDER_ASC_BY_COST,currentProductsArray );
     });
 
     document.getElementById("sortDesc").addEventListener("click", function(){
-        sortAndShowCategories(ORDER_DESC_BY_COST, currentProductsArray );
+        sortAndShowProducts(ORDER_DESC_BY_COST, currentProductsArray );
     });
 
     document.getElementById("sortByCount").addEventListener("click", function(){
-        sortAndShowCategories(ORDER_BY_PROD_COUNT, currentProductsArray );
+        sortAndShowProducts(ORDER_BY_PROD_COUNT, currentProductsArray );
     });
 
     document.getElementById("clearRangeFilter").addEventListener("click", function(){

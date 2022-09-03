@@ -1,10 +1,10 @@
 
-function deslogearse(){
+/* function deslogearse(){
 
 
     if (sessionStorage.getItem("email") !=""){
 
-        sessionStorage.clear; //solo está guardado el email en sessiostorage
+        sessionStorage.removeItem("email"); //solo está guardado el email en sessiostorage
         alert("Sesión Cerrada");
         location.href = "login.html";
         
@@ -26,7 +26,7 @@ function revisarEmail(){
         alert("Estás logeado con "+email);
     }
 
-} 
+} */ 
 
 /* function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
@@ -54,9 +54,9 @@ document.addEventListener("DOMContentLoaded", function(){
         deslogearse();
     });
     
-    revisarEmail();
+/*     revisarEmail();
 
-    document.getElementById("mostrar_email").innerHTML = sessionStorage.getItem("email");
+    document.getElementById("mostrar_email").innerHTML = sessionStorage.getItem("email"); */
 
 /*     document.getElementById("cerrarGoogle").addEventListener("click", function() {
 
