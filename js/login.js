@@ -56,7 +56,29 @@ function onSignIn(googleUser) {
   }
 
 
+
+
+  let user_id ="25801";//Pensar como sería válido para varios ids
+  url_cart_info= CART_INFO_URL+ user_id+".json";//url completa del JSON del carrito
+  console.log(url_cart_info);
+
 document.addEventListener("DOMContentLoaded", function(){
+
+
+    getJSONData(url_cart_info).then(function(resultObj){//Importante estoy haciendo la carga del 1er elemento del carrito una sola vez, pq está en el login
+        if (resultObj.status === "ok")
+        {
+            cartArray  = resultObj.data
+
+            let valor = cartArray.articles[0].unitCost;
+            cartArray.articles[0].subtotal=valor;//pusheando subtotal para tener actualizados los valores en cart.html
+
+            sessionStorage.setItem("arrayCarrito",JSON.stringify(cartArray));
+            
+        }   
+    });
+
+
     document.getElementById("login").addEventListener("click", function() {
 
         logearse();
@@ -76,7 +98,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
     });
-
         
     }
 );

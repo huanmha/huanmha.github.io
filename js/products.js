@@ -53,26 +53,26 @@ function sortProducts(criteria, array){
 function showProductsList(array){
     let htmlContentToAppend = "";
 
-    for(let valor of array){
+    for(let product of array){
 
-        if (((minCount == undefined) || (minCount != undefined && parseInt(valor.cost) >= minCount)) &&
-            ((maxCount == undefined) || (maxCount != undefined && parseInt(valor.cost) <= maxCount))){
+        if (((minCount == undefined) || (minCount != undefined && parseInt(product.cost) >= minCount)) &&
+            ((maxCount == undefined) || (maxCount != undefined && parseInt(product.cost) <= maxCount))){
 
         htmlContentToAppend += `
-        <div class="list-group-item list-group-item-action">
+        <div onclick="productId(${product.id})" class="list-group-item list-group-item-action">
             <div class="row">
                 <div class="col-3">
-                    <img src="` + valor.image + `" alt="product image" class="img-thumbnail">
+                    <img src="` + product.image + `" alt="product image" class="img-thumbnail">
                 </div>
                 <div class="col">
                     <div class="d-flex w-100 justify-content-between">
                         <div>
-                        <h4>`+ valor.name +`</h4> 
-                        <p> `+ valor.description +`</p> 
+                        <h4 id="nombre">`+ product.name +`</h4> 
+                        <p id="descripcion"> `+ product.description +`</p> 
                         </div>
                         <div>
-                        <small>` + valor.soldCount + ` vendidos</small><br><br>
-                        <small> Valor: ` + valor.cost +` `+ valor.currency+ ` </small>
+                        <small>` + product.soldCount + ` vendidos</small><br><br>
+                        <small> Valor: ` + product.cost +` `+ product.currency+ ` </small>
                         </div>
                     </div>
                 </div>
@@ -132,6 +132,13 @@ function tituloCategoria(catID){
     else if (catID=="103"){
         document.getElementById("tituloCategoria").innerHTML = " muebles"
     }
+};
+
+function productId(id){
+ 
+    sessionStorage.setItem("id",id);
+    location.href = "product-info.html";
+
 };
 
 

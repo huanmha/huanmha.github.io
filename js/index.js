@@ -37,6 +37,7 @@ function revisarEmail(){
 
 
 document.addEventListener("DOMContentLoaded", function(){
+
     document.getElementById("autos").addEventListener("click", function() {
         sessionStorage.setItem("catID", 101);
         window.location = "products.html"
@@ -50,9 +51,11 @@ document.addEventListener("DOMContentLoaded", function(){
         window.location = "products.html"
     });
 
-    document.getElementById("cerrar").addEventListener("click", function() {
+   
+
+/*     document.getElementById("cerrar").addEventListener("click", function() {
         deslogearse();
-    });
+    }); */
     
 /*     revisarEmail();
 

@@ -48,11 +48,13 @@ function colocarBarrra(){
         <li class="nav-item">
           <a class="nav-link" href="sell.html">Vender</a>
         </li>
-        <li class="nav-item">
-          <button type="button" class="btn btn-danger" id="cerrarSesion" >Cerrar Sesión</button>
-        </li>
-        <li class="nav-item">
-          <span class="nav-link" id="mostrar_email"></span>
+        <li class="nav-item dropdown">
+          <a id="mostrar_email" class="nav-link btn btn-primary dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;"></a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="cart.html">Carrito</a>
+            <a class="dropdown-item" href="my-profile.html">Perfil</a>
+            <a class="dropdown-item" href ="#" id="cerrarSesion">Cerrar Sesion</a>
+          </div>
         </li>
       </ul>
     </div>
